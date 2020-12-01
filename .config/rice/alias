@@ -1,0 +1,13 @@
+alias h='cd ~'
+
+alias ls='lsd'
+alias lsl="ls -l"
+
+alias v="nvim"
+alias vim="nvim"
+
+alias sudo="sudo "
+
+alias c="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
+
+alias f='fernseher'

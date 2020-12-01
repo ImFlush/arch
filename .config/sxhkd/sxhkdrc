@@ -1,0 +1,54 @@
+# Programme
+super + Return 
+		$TERMINAL
+
+super + c
+		$BROWSER
+
+super + shift + x
+		slock
+
+super + F12
+		st htop
+
+
+# Shutdown
+super + F7
+		promt "Poweroff?" "poweroff" &
+# Reboot
+super + F8
+		promt "Reboot?" "reboot" &
+# Exit i3
+super + F9
+		promt "Exit i3?" "i3-msg exit" &
+
+
+## Mount / Umount
+super + F10
+		dmenumount&
+super + F11
+		dmenuumount&
+
+
+# Sound
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+		amixer set Master {5%+, 5%-}
+		
+XF86AudioMute
+		amixer set Master toggle
+		
+{XF86AudioPlay,XF86AudioPause,XF86AudioNext,XF86AudioPrev}
+		playerctl {play, pause, next, previous}
+
+
+# Screen 
+super + shift + s
+		~/.scripts/screens/Screen-Profiles
+
+super + control + s
+		~/.scripts/screens/SelectMonitor
+
+
+# Brightness
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+		light {-A 20,-U 20}

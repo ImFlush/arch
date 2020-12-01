@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/tom/.config/sxhkd'
+let g:netrw_dirhist_5='/sys/class/backlight/intel_backlight'
+let g:netrw_dirhist_4='/home/tom/.config/sxhkd'
+let g:netrw_dirhist_3='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_2='/home/tom/.config/sxhkd'
+let g:netrw_dirhist_1='/home/tom/.config/i3'
