@@ -1,0 +1,5 @@
+#!/bin/sh
+
+vsc() { find ~/.scripts | fzf | xargs sh -c '$EDITOR "$@" < /dev/tty' $EDITOR; }
+vco() { find ~/.config  | fzf | xargs sh -c '$EDITOR "$@" < /dev/tty' $EDITOR; }
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Show a promt an run an instruction
+if [ "$(echo -e -n "No\nYes" | dmenu -i -p "$1")" = "Yes" ]; then
+		$2
+fi

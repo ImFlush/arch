@@ -1,0 +1,20 @@
+#!/bin/bash
+mode=$(echo -e "Laptop\nFernseher" | dmenu -i -fn "System San Francisco Display")
+
+intern=eDP-1
+hdmi=HDMI-1
+
+#Screen mode
+if [ "$mode" = "" ]; then
+		exit 1
+elif [ "$mode" = "Laptop" ]; then
+		xrandr --output "$intern" --auto 
+		xrandr --output "$hdmi" --off
+		xset s on
+elif [ "$mode" = "Fernseher" ]; then
+		xrandr --output "$intern" --off 
+		xrandr --output "$hdmi" --auto
+		xset s off
+fi
+
+xwallpaper --focus ~/Bilder/oneshot.png
