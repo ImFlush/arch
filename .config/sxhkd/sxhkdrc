@@ -32,7 +32,7 @@ super + F11
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		amixer set Master {5%+, 5%-}
+		amixer set Master {5%+, 5%-} 
 		
 XF86AudioMute
 		amixer set Master toggle
@@ -51,4 +51,4 @@ super + control + s
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		light {-A 20,-U 20}
+		light {-A 20,-U 20} && light | grep -E -o '^[[:digit:]]+[^\.]' > /home/tom/.config/brightness
