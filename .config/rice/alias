@@ -10,4 +10,8 @@ alias sudo="sudo "
 
 alias c="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
 
+alias wlan="nmcli device wifi"
+alias wlanc="nmcli device wifi connect"
+alias wlanl="nmcli device wifi list"
+
 alias f='fernseher'
