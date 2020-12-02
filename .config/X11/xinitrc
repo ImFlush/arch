@@ -61,7 +61,7 @@ setxkbmap -layout de
 setxkbmap -option caps:escape
 
 # Background
-xwallpaper --focus ~/Bilder/oneshot.png &
+xwallpaper --focus ~/bilder/oneshot.png &
 
 # Display Resolution
 xrandr --output eDP-1 --mode 1920x1080 &

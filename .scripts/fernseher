@@ -5,11 +5,11 @@ extern=HDMI-1
 
 if xrandr | grep "$extern disconnected"; then
     xrandr --output "$extern" --off --output "$intern" --auto
-    xwallpaper --focus ~/Bilder/oneshot.png
+    xwallpaper --focus ~/bilder/oneshot.png
     xset s on
 else
     xrandr --output "$extern" --set audio force-dvi
     xrandr --output "$intern" --off --output "$extern" --auto
-	xwallpaper --focus ~/Bilder/oneshot.png
+	xwallpaper --focus ~/bilder/oneshot.png
     xset s off
 fi

@@ -64,6 +64,8 @@ else
 fi
 $befehl
 
+xwallpaper --focus ~/bilder/oneshot.png
+
 #~/.fehbg
 #sleep 30
 #~/Monitore.sh

@@ -17,4 +17,4 @@ elif [ "$mode" = "Fernseher" ]; then
 		xset s off
 fi
 
-xwallpaper --focus ~/Bilder/oneshot.png
+xwallpaper --focus ~/bilder/oneshot.png
