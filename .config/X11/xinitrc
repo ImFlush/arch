@@ -70,7 +70,7 @@ xrandr --output eDP-1 --mode 1920x1080 &
 xcompmgr &
 
 #Master Volume
-amixer set Master 100%
+pactl set-sink-volume 0 50%
 
 # HDMI settings
 xrandr --output HDMI-1 --set audio force-dvi

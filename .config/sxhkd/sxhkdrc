@@ -8,15 +8,15 @@ super + c
 super + shift + x
 		slock
 
-super + F12
+super + F5
 		st htop
 
 
 # Shutdown
-super + F7
+super + F12
 		promt "Poweroff?" "poweroff" &
 # Reboot
-super + F8
+super + F11
 		promt "Reboot?" "reboot" &
 # Exit i3
 super + F9
@@ -24,18 +24,18 @@ super + F9
 
 
 ## Mount / Umount
-super + F10
+super + F7
 		dmenumount&
-super + F11
+super + F8
 		dmenuumount&
 
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		amixer set Master {5%+, 5%-} 
+		pactl set-sink-volume 0 {+5%, -5%}
 		
 XF86AudioMute
-		amixer set Master toggle
+		pactl set-sink-mute 0 toggle
 		
 {XF86AudioPlay,XF86AudioPause,XF86AudioNext,XF86AudioPrev}
 		playerctl {play, pause, next, previous}
