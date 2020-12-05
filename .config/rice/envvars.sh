@@ -2,7 +2,7 @@
 
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="firefox"
+export BROWSER="brave"
 
 export PATH=$PATH:$HOME/.scripts
 export TERM="st-256color"
