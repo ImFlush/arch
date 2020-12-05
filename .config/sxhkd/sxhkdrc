@@ -11,6 +11,9 @@ super + shift + x
 super + F5
 		st htop
 
+super + t
+		todo
+
 
 # Shutdown
 super + F12
@@ -51,4 +54,4 @@ super + control + s
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		light {-A 20,-U 20} && light | grep -E -o '^[[:digit:]]+[^\.]' > /home/tom/.config/brightness
+		xbacklight {-inc 20, -dec 20}
