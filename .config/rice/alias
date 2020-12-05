@@ -13,4 +13,7 @@ alias c="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
 alias wlan="nmcli device wifi"
 alias wlanc="nmcli connection"
 
+alias wireup="sudo wg-quick up wg0"
+alias wiredown="sudo wg-quick down wg0"
+
 alias f='fernseher'
