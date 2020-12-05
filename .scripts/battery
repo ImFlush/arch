@@ -1,0 +1,27 @@
+#!/bin/bash
+
+BAT=$(acpi -b | grep -E -v 'Unknown' | grep -E -o '[0-9]{0,1}[0-9][0-9]?%' | grep -E -o '[0-9]{0,3}')
+CHR=$(acpi -b | grep -E -v 'Unknown' | grep -E -o 'Discharging')
+
+if [ "$CHR" = '' ]
+	then
+		echo "?"
+		exit
+elif [ -z $CHR ]
+	then
+		status=$""
+elif [ $BAT -lt 26 ]
+    then
+		status=$""
+elif [ $BAT -lt 51 ]
+    then
+		status=$""
+elif [ $BAT -lt 76 ]
+    then
+		status=$""
+
+else
+		status=$""
+fi
+
+echo "$status $BAT%"

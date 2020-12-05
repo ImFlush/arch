@@ -1,0 +1,21 @@
+WIFI=$(nmcli -g DEVICE,NAME connection | grep -E '^wlp3s0:' | cut -b 8-)
+strength=$(nmcli -g IN-USE,BARS device wifi | grep -E '^\*' | cut -b 3-)
+
+ETH=$(nmcli -g DEVICE,NAME connection | grep -E '^eno1:' | cut -b 6-)
+
+flightmode=$(rfkill -o TYPE,SOFT list | grep -E 'wlan' | cut -b 11-)
+
+if [ "$ETH" != '' ]
+	then
+		status=$""
+		echo $status
+elif [ "$WIFI" != '' ]
+	then
+		status=$""
+		echo $status $WIFI $strength 
+elif [ "$flightmode" = 'gesperrt' ]
+	then
+		echo ""
+else
+		echo ""
+fi
