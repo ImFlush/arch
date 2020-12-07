@@ -1,15 +1,15 @@
 #!/bin/bash
 
-BAT=$(acpi -b | grep -E -v 'Unknown' | grep -E -o '[0-9]{0,1}[0-9][0-9]?%' | grep -E -o '[0-9]{0,3}')
-CHR=$(acpi -b | grep -E -v 'Unknown' | grep -E -o 'Discharging')
+BAT=$(acpi | tail -1 | awk 'NR==1 gsub (/[%,]/,"") ;NR==1 {print $4}')
+CHR=$(acpi | tail -1 | awk '{print $3}')
 
-if [ "$CHR" = '' ]
+if [ "$CHR" != "Discharging," ]
+	then
+		status=$""
+elif [ "$CHR" = '' ]
 	then
 		echo "?"
 		exit
-elif [ -z $CHR ]
-	then
-		status=$""
 elif [ $BAT -lt 26 ]
     then
 		status=$""

@@ -1,14 +1,13 @@
-WIFI=$(nmcli -g DEVICE,NAME connection | grep -E '^wlp3s0:' | cut -b 8-)
-strength=$(nmcli -g IN-USE,BARS device wifi | grep -E '^\*' | cut -b 3-)
+WIFI=$(nmcli -g DEVICE,NAME connection | grep -E '^wlp3s0:' | awk -F: '{print $2}')
+strength=$(nmcli -g IN-USE,BARS device wifi | grep -E '^\*' | awk -F: '{print $2}')
 
-ETH=$(nmcli -g DEVICE,NAME connection | grep -E '^eno1:' | cut -b 6-)
+ETH=$(nmcli -g DEVICE,NAME connection | grep -E '^eno1:')
 
-flightmode=$(rfkill -o TYPE,SOFT list | grep -E 'wlan' | cut -b 11-)
+flightmode=$(rfkill -o TYPE,SOFT list | grep -E 'wlan' | awk '{print $2}')
 
 if [ "$ETH" != '' ]
 	then
-		status=$""
-		echo $status
+		echo " LAN"
 elif [ "$WIFI" != '' ]
 	then
 		status=$""
