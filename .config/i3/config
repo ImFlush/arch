@@ -19,24 +19,6 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 12
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -93,10 +75,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+bindsym $mod+shift+a floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -119,27 +101,27 @@ set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -176,10 +158,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps
-gaps inner 5
+gaps inner 15
+#gaps outer 5
 
 # Borders
-hide_edge_borders smart	
+#hide_edge_borders both
 
 # Start in tabbed mode
 workspace_layout default
@@ -189,7 +172,7 @@ focus_follows_mouse no
 mouse_warping none 
 
 # window header
-title_align center
+#title_align center
 
 # new workspace orientation
 default_orientation horizontal
@@ -199,10 +182,11 @@ default_orientation horizontal
 
 #client.focused #02c9c4 #02c9c4 #fdf6e3 #02c9c4
 #client.focused_inactive #073642 #073642 #93a1a1 #586e75
+#client.focused_inactive #8b1c62 #8b1c62 #93a1a1 #8b1c62
 
 client.focused #ff34b3 #ff34b3 #f5f5dc #ff34b3
-client.focused_inactive #8b1c62 #8b1c62 #93a1a1 #8b1c62
-client.unfocused #8b1c62 #8b1c62 #93a1a1 #8b1c62
+client.focused_inactive #b03060 #b03060 #93a1a1 #b03060
+client.unfocused #b03060 #b03060 #93a1a1 #b03060
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -214,7 +198,6 @@ bar {
 		# Workspace Names
 		strip_workspace_numbers yes
 
-        status_command i3status --config /home/tom/.config/i3/i3status.conf
 		status_command i3blocks -c /home/tom/.config/i3/i3blocks.conf
 
 		colors {
@@ -223,7 +206,7 @@ bar {
 				statusline #b03060
 
 				focused_workspace #f5f5dc #ff34b3 #f5f5dc
-				active_workspace #f5f5dc #b03060 #f5f5dc
+				active_workspace #f5f5dc #ff34b3 #f5f5dc
 				inactive_workspace #93a1a1 #b03060 #93a1a1 
 
 				urgent_workspace #d33682 #d33682 #fdf6e3
