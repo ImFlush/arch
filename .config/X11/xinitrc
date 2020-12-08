@@ -25,7 +25,8 @@ xrandr --output eDP-1 --mode 1920x1080 &
 xwallpaper --focus ~/bilder/oneshot.png &
 
 # Compositor
-xcompmgr &
+#xcompmgr &
+picom --config .config/picom/picom.sample.conf &
 
 #Master Volume
 pactl set-sink-volume 0 50%
