@@ -1,11 +1,19 @@
-VOL=$(amixer get Master | grep -E -o '[0-9]{0,3}?%' | sort -u)
+#!/bin/bash
+
+VOL=$(amixer get Master | grep -E -o '[0-9]{0,3}%' | grep -E -o '[0-9]{0,3}' | sort -u)
 mute=$(amixer get Master | grep -E -o '(\[on\]|\[off\])' | sort -u)
 
-if [ $mute = "[on]" ]
+if [ $mute = "[off]" ]
 	then
-		status=$""
-	else
-		status=$""
+		status=$"󰝟"
+elif [ "$VOL" -lt 31 ]
+then
+		status=$"󰕿"
+elif [ "$VOL" -lt 66 ]
+then
+		status=$"󰖀"
+else
+		status=$"󰕾"
 fi
 
-echo "$status $VOL"
+echo "$status $VOL%"
