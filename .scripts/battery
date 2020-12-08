@@ -10,6 +10,9 @@ elif [ "$CHR" = '' ]
 	then
 		echo "?"
 		exit
+elif [ $BAT -lt 11 ]
+	then
+		status=$""
 elif [ $BAT -lt 26 ]
     then
 		status=$""
