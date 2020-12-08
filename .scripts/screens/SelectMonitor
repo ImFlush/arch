@@ -65,6 +65,7 @@ fi
 $befehl
 
 xwallpaper --focus ~/bilder/oneshot.png
+picom --config .config/picom/picom.sample.conf &
 
 #~/.fehbg
 #sleep 30
