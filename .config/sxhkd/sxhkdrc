@@ -40,8 +40,8 @@ super + F8
 XF86AudioMute
 		pactl set-sink-mute 0 toggle; pkill -SIGRTMIN+10 i3blocks
 		
-{XF86AudioPlay,XF86AudioPause,XF86AudioNext,XF86AudioPrev}
-		playerctl {play, pause, next, previous}
+{XF86AudioPlay,XF86AudioNext,XF86AudioPrev}
+		playerctl {play-pause, next, previous}
 
 
 # Screen 
