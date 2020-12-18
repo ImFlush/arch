@@ -1,22 +1,40 @@
-*.font Mono:pixelsize=50:antialias=true:autohint=true;
+*.font: SFMono-Regular:pixelsize=24:antialias=true:autohint=true;
 
-*.alpha: 0.5
+!*.alpha: 0.7
 
+! special
 *.foreground: #F8F8F2
 *.background: #100010
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
+*.cursorColor:  #d9d8d8
+
+! black
+*.color0:       #231f20
+*.color8:       #737171
+
+! red
+*.color1:       #ee2e24
+*.color9:       #ee2e24
+
+! green
+*.color2:       #00853e
+*.color10:      #00853e
+
+! yellow
+*.color3:       #ffd204
+*.color11:      #ffd204
+
+! blue
+*.color4:       #009ddc
+*.color12:      #009ddc
+
+! magenta
+*.color5:       #ff34b3
+*.color13:      #da3b77
+
+! cyan
+*.color6:       #85cebc
+*.color14:      #85cebc
+
+! white
+*.color7:       #d9d8d8
+*.color15:      #ffffff
