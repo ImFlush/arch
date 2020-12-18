@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$(wmctrl -m | grep Name | cut -d' ' -f2)" = "dwm" ]
+	then
+		pkill launch-dwm
+else
+		i3-msg exit
+fi
