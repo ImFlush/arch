@@ -5,15 +5,40 @@ mute=$(amixer get Master | grep -E -o '(\[on\]|\[off\])' | sort -u)
 
 if [ $mute = "[off]" ]
 	then
-		status=$"󰝟"
+		status="󰝟"
 elif [ "$VOL" -lt 31 ]
 then
-		status=$"󰕿"
+		status="󰕿"
 elif [ "$VOL" -lt 66 ]
 then
-		status=$"󰖀"
+		status="󰖀"
 else
-		status=$"󰕾"
+		status="󰕾"
 fi
 
-echo "$status $VOL%"
+echo "$status $VOL %"
+
+bar=""
+
+if [ $mute = "[on]" ]
+	then
+		for (( i=1; i<$VOL; i=$i+5 ))
+			do
+				bar+=$"󰄯"
+			done
+		for (( i=$VOL; i<100; i=$i+5 ))
+			do
+				bar+=$"󰄰"
+			done
+else
+		for (( i=1; i<$VOL; i=$i+5 ))
+			do
+				bar+=$"󰰱"
+			done
+		for (( i=$VOL; i<100; i=$i+5 ))
+			do
+				bar+=$"󰰲"
+			done
+fi
+
+echo "[$bar]"
