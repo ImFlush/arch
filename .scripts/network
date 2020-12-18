@@ -1,3 +1,5 @@
+#!/bin/sh
+
 WIFI=$(nmcli -g DEVICE,NAME connection | grep -E '^wlp3s0:' | awk -F: '{print $2}')
 strength=$(nmcli -g IN-USE,BARS device wifi | grep -E '^\*' | awk -F: '{print $2}')
 
@@ -10,7 +12,7 @@ if [ "$ETH" != '' ]
 		echo " LAN"
 elif [ "$WIFI" != '' ]
 	then
-		status=$""
+		status=""
 		echo $status $WIFI $strength 
 elif [ "$flightmode" = 'gesperrt' ]
 	then

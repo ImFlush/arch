@@ -27,4 +27,4 @@ else
 		status=$""
 fi
 
-echo "$status $BAT%"
+echo "$status $BAT %"
