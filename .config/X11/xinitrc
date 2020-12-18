@@ -12,6 +12,9 @@ sxhkd &
 # Hide mousecursor when typing
 xbanish &
 
+# Notify daemon
+dunst &
+
 # Keyboard Layout
 setxkbmap -layout de
 
@@ -22,11 +25,7 @@ setxkbmap -option caps:escape
 xrandr --output eDP-1 --mode 1920x1080 &
 
 # Background
-xwallpaper --focus ~/bilder/oneshot.png &
-
-# Compositor
-#xcompmgr &
-picom --config .config/picom/picom.sample.conf &
+xwallpaper --zoom ~/bilder/wallpaper.jpg &
 
 #Master Volume
 pactl set-sink-volume 0 50%
@@ -37,5 +36,15 @@ xrandr --output HDMI-1 --set audio force-dvi
 # Backlight
 xbacklight -set 100
 
+# Compositor
+xcompmgr &
+#picom --config .config/picom/picom.sample.conf &
+
 # WM
-exec i3 
+if [ "$(tty)" = "/dev/tty2" ]
+	then
+		exec i3
+elif [ "$(tty)" = "/dev/tty1" ]
+	then
+		exec ~/.scripts/launch-dwm
+fi
