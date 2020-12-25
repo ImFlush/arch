@@ -17,5 +17,6 @@ alias wireup="sudo wg-quick up wg0"
 alias wiredown="sudo wg-quick down wg0"
 
 alias cdwm="cd ~/repos/dwm"
+alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
 
 alias f='fernseher'
