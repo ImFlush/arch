@@ -10,7 +10,7 @@ xrdb /home/tom/.config/X11/xresources
 sxhkd &
 
 # Hide mousecursor when typing
-xbanish &
+xbanish -s -t 4000 -b &
 
 # Notify daemon
 dunst &
