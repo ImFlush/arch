@@ -17,7 +17,9 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+#font pango:DejaVu Sans Mono 12
+
+font pango:SFMono-Regular 16
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -158,13 +160,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # gaps
-gaps inner 15
-#gaps outer 5
+gaps inner 5
+gaps outer 5
 
 # Borders
+default_border pixel 3
 #hide_edge_borders both
 
-# Start in tabbed mode
+# Start in split mode
 workspace_layout default
 
 # stop mouse focus on hover
