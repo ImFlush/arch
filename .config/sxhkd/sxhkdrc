@@ -12,6 +12,9 @@ super + F5
 		st htop
 
 super + shift + t
+		telegram-desktop
+
+super + ctrl + t
 		todo
 
 
