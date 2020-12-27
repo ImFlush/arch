@@ -16,6 +16,21 @@ alias wlanc="nmcli connection"
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
 
+# Git
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gd="git diff"
+alias gl="git log"
+alias glo="git log --oneline"
+alias gm="git merge"
+alias gch="git checkout"
+alias gr="git reset"
+alias gp="git pull && git push"
+alias gpu="git pull"
+
 alias cdwm="cd ~/repos/dwm"
 alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
 
