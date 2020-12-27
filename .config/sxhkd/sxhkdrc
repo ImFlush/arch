@@ -8,6 +8,9 @@ super + c
 super + shift + x
 		slock
 
+super + F4
+		discord
+
 super + F5
 		st htop
 
