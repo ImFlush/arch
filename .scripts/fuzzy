@@ -1,5 +1,33 @@
 #!/bin/sh
 
-vsc() { find ~/.scripts | fzf | xargs sh -c '$EDITOR "$@" < /dev/tty' $EDITOR; }
-vco() { find ~/.config  | fzf | xargs sh -c '$EDITOR "$@" < /dev/tty' $EDITOR; }
+fzfstyle="--border=rounded"
 
+vsc() 
+{
+		file=$(find ~/.scripts -type f | fzf $fzfstyle --prompt="$EDITOR ")
+		[ "$file" != "" ] && $EDITOR $file
+}
+
+vco() 
+{
+		file=$(find ~/.config -type f | fzf $fzfstyle --prompt="$EDITOR ")
+		[ "$file" != "" ] && $EDITOR $file
+}
+
+
+gchf() 
+{
+		[ -d .git ] || return
+    git checkout $(git branch | fzf $fzfstyle --prompt='git checkout ' || return) 
+}
+
+c()
+{
+     cd $(find -type d | fzf $fzfstyle --prompt='cd ' || return)
+}
+
+dwmapply()
+{
+		[ "$(pwd)" != "/home/$USER/repos/dwm" ] && return
+		git apply $(find ~/downloads/dwm-patches/ -type f | fzf $fzfstyle --prompt='git apply ' || return)
+}
