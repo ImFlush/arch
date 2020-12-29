@@ -1,8 +1,9 @@
 #!/bin/bash
-mode=$(echo -e "Laptop\nFernseher" | dmenu -i -fn "System San Francisco Display")
+mode=$(echo -e "Laptop\nFernseher\nPapa" | dmenu -i -fn "System San Francisco Display")
 
 intern=eDP-1
 hdmi=HDMI-1
+vga=DP-1
 
 #Screen mode
 if [ "$mode" = "" ]; then
@@ -10,10 +11,17 @@ if [ "$mode" = "" ]; then
 elif [ "$mode" = "Laptop" ]; then
 		xrandr --output "$intern" --mode 1920x1080
 		xrandr --output "$hdmi" --off
+		xrandr --output "$vga" --off
 		xset s on
 elif [ "$mode" = "Fernseher" ]; then
 		xrandr --output "$intern" --off 
 		xrandr --output "$hdmi" --mode 1360x768
+		xrandr --output "$vga" --off
+		xset s off
+elif [ "$mode" = "Papa" ]; then
+		xrandr --output "$intern" --off
+		xrandr --output "$hdmi" --auto
+		xrandr --output "$vga" --right-of "$hdmi" --auto
 		xset s off
 fi
 
