@@ -30,4 +30,4 @@ elif [ "$mode" = "Papa" ]; then
 		xset s off
 fi
 
-xwallpaper --zoom ~/bilder/wallpaper.jpg
+xwallpaper --zoom ~/bilder/wallpaper

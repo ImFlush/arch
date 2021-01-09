@@ -25,7 +25,7 @@ setxkbmap -option caps:escape
 xrandr --output eDP-1 --mode 1920x1080 &
 
 # Background
-xwallpaper --zoom ~/bilder/wallpaper.jpg &
+xwallpaper --zoom ~/bilder/wallpaper &
 
 #Master Volume
 pactl set-sink-volume 0 50%
