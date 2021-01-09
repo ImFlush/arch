@@ -1,40 +1,27 @@
-*.font: SFMono-Regular:pixelsize=24:antialias=true:autohint=true;
+*.font: SFMono-Regular:pixelsize=20:antialias=true:autohint=true;
 
-!*.alpha: 0.7
+*.alpha: 0.6
 
 ! special
-*.foreground: #F8F8F2
-*.background: #100010
-*.cursorColor:  #d9d8d8
+*.foreground: #f4eee1
+*.background: #050307
+*.cursorColor:  #f4eee1
 
-! black
-*.color0:       #231f20
-*.color8:       #737171
-
-! red
-*.color1:       #ee2e24
-*.color9:       #ee2e24
-
-! green
-*.color2:       #00853e
-*.color10:      #00853e
-
-! yellow
-*.color3:       #ffd204
-*.color11:      #ffd204
-
-! blue
-*.color4:       #009ddc
-*.color12:      #009ddc
-
-! magenta
-*.color5:       #ff34b3
-*.color13:      #da3b77
-
-! cyan
-*.color6:       #85cebc
-*.color14:      #85cebc
-
-! white
-*.color7:       #d9d8d8
-*.color15:      #ffffff
+*.color0: #171717
+*.color1: #d81765
+*.color2: #97d01a
+*.color3: #ffa800
+*.color4: #16b1fb
+*.color5: #ff2491
+*.color6: #0fdcb6
+*.color7: #ebebeb
+*.color8: #38252c
+*.color9: #d81765
+*.color10: #97d01a
+*.color11: #ffa800
+*.color12: #16b1fb
+*.color13: #ff2491
+*.color14: #0fdcb6
+*.color15: #ebebeb
+*.color16: #38252c
+*.color17: #ff0000
