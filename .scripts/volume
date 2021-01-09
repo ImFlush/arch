@@ -22,23 +22,23 @@ bar=""
 
 if [ $mute = "[on]" ]
 	then
-		for (( i=1; i<$VOL; i=$i+5 ))
+		for (( i=0; i<$VOL; i=$i+10 ))
 			do
 				bar+=$"󰄯"
 			done
-		for (( i=$VOL; i<100; i=$i+5 ))
+		for (( i=$VOL; i<95; i=$i+10 ))
 			do
 				bar+=$"󰄰"
 			done
 else
-		for (( i=1; i<$VOL; i=$i+5 ))
+		for (( i=0; i<$VOL; i=$i+10 ))
 			do
 				bar+=$"󰰱"
 			done
-		for (( i=$VOL; i<100; i=$i+5 ))
+		for (( i=$VOL; i<95; i=$i+10 ))
 			do
 				bar+=$"󰰲"
 			done
 fi
 
-echo "[$bar]"
+echo "$bar"
