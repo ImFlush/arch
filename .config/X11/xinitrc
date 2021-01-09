@@ -1,50 +1,34 @@
 #!/bin/sh
 
-#Turn on Numlock
-numlockx &
+# Keyboard 
+setxkbmap -layout de
+setxkbmap -option caps:escape
+numlockx
 
-# Update Xresources
+# Settings
+xwallpaper --zoom ~/bilder/wallpaper
+pactl set-sink-volume 0 50%
+xbacklight -set 100
 xrdb /home/tom/.config/X11/xresources
 
-# Hotkeys 
+# Programs
 sxhkd &
-
-# Hide mousecursor when typing
 xbanish -s -t 4000 -b &
-
-# Notify daemon
 dunst &
 
-# Keyboard Layout
-setxkbmap -layout de
-
-# Caps zu ESC
-setxkbmap -option caps:escape
-
-# Display Resolution
-xrandr --output eDP-1 --mode 1920x1080 &
-
-# Background
-xwallpaper --zoom ~/bilder/wallpaper &
-
-#Master Volume
-pactl set-sink-volume 0 50%
-
-# HDMI settings
+# Display
+xrandr --output eDP-1 --mode 1920x1080
 xrandr --output HDMI-1 --set audio force-dvi
-
-# Backlight
-xbacklight -set 100
 
 # Compositor
 xcompmgr &
-#picom --config .config/picom/picom.sample.conf &
+
 
 # WM
-if [ "$(tty)" = "/dev/tty2" ]
-	then
-		exec i3
-elif [ "$(tty)" = "/dev/tty1" ]
+if [ "$(tty)" = "/dev/tty1" ]
 	then
 		exec ~/.scripts/launch-dwm
+elif [ "$(tty)" = "/dev/tty2" ]
+	then
+		exec i3
 fi
