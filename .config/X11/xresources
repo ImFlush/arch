@@ -3,7 +3,7 @@
 *.alpha: 0.6
 
 ! special
-*.foreground: #f4eee1
+*.foreground: #f5f5dc
 *.background: #050307
 *.cursorColor:  #f4eee1
 
