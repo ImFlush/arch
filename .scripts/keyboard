@@ -1,0 +1,5 @@
+#!/bin/sh
+
+setxkbmap -layout de
+setxkbmap -option caps:escape
+numlockx on
