@@ -23,7 +23,8 @@ gchf()
 
 c()
 {
-     cd $(find -type d | fzf $fzfstyle --prompt='cd ' || return)
+    # cd $(find -type d | fzf $fzfstyle --prompt='cd ' || return)
+	cd "$(find -type d | fzf $fzfstyle --prompt='cd ' || return | sed -e 's= =\\ =g')"
 }
 
 dwmapply()
