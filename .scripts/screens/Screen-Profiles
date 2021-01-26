@@ -30,4 +30,5 @@ elif [ "$mode" = "Papa" ]; then
 		xset s off
 fi
 
+sleep .5
 xwallpaper --zoom ~/bilder/wallpaper
