@@ -1,24 +1,20 @@
 # Programme
 super + Return 
 		$TERMINAL
-
 super + c
 		$BROWSER
-
 super + shift + x
 		slock
-
-super + F4
-		discord
-
-super + F5
-		st htop
-
-super + shift + t
-		telegram-desktop
-
 super + ctrl + t
 		todo
+
+
+super + F3
+		telegram-desktop
+super + F4
+		sh ~/.scripts/discord
+super + F5
+		st htop
 
 
 # Shutdown
@@ -27,6 +23,9 @@ super + F12
 # Reboot
 super + F11
 		promt "Reboot?" "reboot" &
+# Suspend
+super + F10
+		promt "Suspend?" "sh .scripts/suspend" &
 # Exit i3
 super + F9
 		promt "Exit WM?" "killwm" &
@@ -60,4 +59,4 @@ super + control + s
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks;  pkill -SIGTRAP dwmbar; dunstify -r 255 brightness "  $(xbacklight -get) % "
+		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks;  pkill -SIGTRAP dwmbar; dunstify -r 255 brightness "   $(xbacklight -get) % "
