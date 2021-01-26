@@ -3,7 +3,7 @@
 # Keyboard 
 setxkbmap -layout de
 setxkbmap -option caps:escape
-numlockx
+numlockx on
 
 # Settings
 xwallpaper --zoom ~/bilder/wallpaper
