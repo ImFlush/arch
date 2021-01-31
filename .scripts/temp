@@ -1,0 +1,3 @@
+temp=$(sensors | grep "Package id 0" | awk 'NR==4 gsub(/[°C]/,""); {print substr($4,2)}' | sed 's=\.0==g')
+
+echo $temp
