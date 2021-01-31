@@ -1,0 +1,1 @@
+[ -z $(pgrep Discord) ] && discord || pkill Discord
