@@ -19,8 +19,8 @@ status()
 		echo -n $delim
 		echo -n "  $(df -h / | grep -E '/dev/sda2' | awk '{print $4}') "
 		echo -n $delim
-		echo -n "  $(xbacklight -get) % "
-		echo -n $delim
+		#echo -n "  $(xbacklight -get) % "
+		#echo -n $delim
 		echo -n " $(~/.scripts/volume | head -1) "
 		echo -n $delim
 		echo -n " $(~/.scripts/battery) "
