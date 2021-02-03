@@ -1,16 +1,15 @@
-# Programme
+# Programs
 super + Return 
 		$TERMINAL
 super + c
 		$BROWSER
 super + shift + x
 		slock
-super + ctrl + t
+super + shift + t
 		todo
 
-
 super + F3
-		telegram-desktop
+		sh ~/.scripts/telegram
 super + F4
 		sh ~/.scripts/discord
 super + F5
@@ -40,7 +39,7 @@ super + F8
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$(~/.scripts/volume)"
+		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 Volume "$(~/.scripts/volume)"
 		
 XF86AudioMute
 		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$(~/.scripts/volume)"
@@ -59,4 +58,4 @@ super + control + s
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks;  pkill -SIGTRAP dwmbar; dunstify -r 255 brightness "   $(xbacklight -get) % "
+		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks;  pkill -SIGTRAP dwmbar; dunstify -r 255 Brightness "   $(xbacklight -get) % "
