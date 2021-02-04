@@ -1,0 +1,1 @@
+[ -z $(pgrep telegram-deskto) ] && telegram-desktop || pkill telegram-deskto
