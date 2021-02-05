@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "/bin/zsh\n/usr/bin/zsh" >> /etc/shells
+
+mkdir /etc/zsh
+touch /etc/zsh/zshenv
+echo "#!/bin/sh\n\nexport ZDOTDIR='$HOME/.config/zsh'\nexport HISTFILE='$HOME/.local/share/zsh/history'" > /etc/zsh/zshenv
+
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 hwclock --systohc
