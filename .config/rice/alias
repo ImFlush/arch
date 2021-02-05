@@ -1,4 +1,4 @@
-# Home
+# home
 alias h='cd ~'
 
 # ls
@@ -18,12 +18,15 @@ alias s="sudo "
 alias co="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
 
 # nmcli
-alias wlan="nmcli device wifi"
-alias wlanc="nmcli connection"
+alias wifi="nmcli device wifi"
+alias wific="nmcli connection"
 
 # wireguard
-alias wgup="sudo wg-quick up /etc/wireguard/tom.dedyn.io.conf"
-alias wgdown="sudo wg-quick down /etc/wireguard/tom.dedyn.io.conf"
+alias wgtup="sudo wg-quick up /etc/wireguard/tom.dedyn.io.conf"
+alias wgtdown="sudo wg-quick down /etc/wireguard/tom.dedyn.io.conf"
+
+alias wgup="sudo wg-quick up /etc/wireguard/"
+alias wgdown="sudo wg-quick down /etc/wireguard/"
 
 # Git
 alias g="git"
@@ -31,17 +34,21 @@ alias gs="git status"
 alias ga="git add"
 alias gaa="git add --all"
 alias gc="git commit"
+alias gcm="git commit -m"
 alias gd="git diff"
 alias gl="git log"
 alias glo="git log --oneline"
 alias gm="git merge"
 alias gch="git checkout"
+alias gchm="git checkout master"
 alias gr="git reset"
-alias gp="git pull && git push"
-alias gpu="git pull"
-alias gph="git push"
+alias grh="git reset --hard"
+alias gpp="git pull && git push"
+alias gpl="git pull"
+alias gps="git push"
 
 # dwm
 alias cdwm="cd ~/repos/dwm"
-alias cst="cd ~/repos/st"
+alias cdst="cd ~/repos/st"
 alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
+alias st-clean='cd ~/repos/st && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
