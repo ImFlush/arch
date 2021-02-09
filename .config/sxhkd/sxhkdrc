@@ -8,6 +8,8 @@ super + shift + x
 super + shift + t
 		todo
 
+super + F2
+		sh ~/.scripts/signal
 super + F3
 		sh ~/.scripts/telegram
 super + F4
