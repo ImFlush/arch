@@ -2,6 +2,7 @@
 alias h='cd ~'
 
 # ls
+alias l='lsd'
 alias ls='lsd'
 alias lsa="lsd -la"
 alias lsl="lsd -l"
