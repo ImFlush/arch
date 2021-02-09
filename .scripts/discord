@@ -1,1 +1,2 @@
+#!/bin/bash
 [ -z $(pgrep Discord) ] && discord || pkill Discord
