@@ -1,0 +1,2 @@
+#!/bin/bash
+[ -z $(pgrep signal-desktop) ] && signal-desktop || pkill signal-desktop
