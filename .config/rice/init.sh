@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "/bin/zsh\n/usr/bin/zsh" >> /etc/shells
+echo "\n/bin/zsh\n/usr/bin/zsh" >> /etc/shells
 
-mkdir /etc/zsh
+[ ! -d /etc/zsh ] && mkdir /etc/zsh
 touch /etc/zsh/zshenv
 echo "#!/bin/sh\n\nexport ZDOTDIR='$HOME/.config/zsh'\nexport HISTFILE='$HOME/.local/share/zsh/history'" > /etc/zsh/zshenv
 
@@ -10,7 +10,7 @@ ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 hwclock --systohc
 
-echo "de_DE.UTF-8 UTF-8\nde_DE ISO-8859-1\nde_DE@euro ISO-8859-15" > /etc/locale.gen
+echo "\nde_DE.UTF-8 UTF-8\nde_DE ISO-8859-1\nde_DE@euro ISO-8859-15" >> /etc/locale.gen
 locale-gen
 
 touch /etc/locale.conf
@@ -26,3 +26,5 @@ touch /etc/hosts
 echo "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	arch.localdomain	arch" > /etc/hosts
 
 mkinitcpio -P
+
+source $HOME/.config/rice/alias
