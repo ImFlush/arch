@@ -6,7 +6,7 @@ setxkbmap -option caps:escape
 numlockx on
 
 # Settings
-xwallpaper --zoom ~/bilder/wallpaper
+xwallpaper --zoom ~/bilder/background
 pactl set-sink-volume 0 50%
 xbacklight -set 100
 xrdb /home/tom/.config/X11/xresources

@@ -31,4 +31,4 @@ elif [ "$mode" = "Papa" ]; then
 fi
 
 sleep .5
-xwallpaper --zoom ~/bilder/wallpaper
+xwallpaper --zoom ~/bilder/background
