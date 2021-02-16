@@ -6,7 +6,7 @@ sudo pacman -S zsh networkmanager dhcpcd wget dmenu git htop sxhkd pulseaudio pu
 
 sh $HOME/.config/xinit.sh
 
-[ ! -d $HOME/repos ] && mkdir $HOME/repos
+mkdir -p $HOME/repos
 cd $HOME/repos
 git clone https://aur.archlinux.org/yay.git
 cd yay
