@@ -65,4 +65,4 @@ fi
 $befehl
 
 sleep .5
-xwallpaper --zoom ~/bilder/background
+xwallpaper --zoom ~/bilder/.background
