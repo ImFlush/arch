@@ -4,8 +4,9 @@ alias h='cd ~'
 # ls
 alias l='lsd'
 alias ls='lsd'
-alias lsa="lsd -la"
-alias lsl="lsd -l"
+alias la="lsd -a"
+alias ll="lsd -l"
+alias lal="lsd -al"
 
 # vim
 alias v="nvim"
