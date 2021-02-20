@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd $XDG_PICTURES_DIR
+if [ -f ".background" ] && [ -f ".background_" ];
+then
+		mv .background .background1
+		mv .background_ .background
+		mv .background1 .background_
+		xwallpaper --daemon --zoom ~/bilder/.background
+fi

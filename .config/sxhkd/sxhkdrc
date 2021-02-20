@@ -53,10 +53,10 @@ XF86AudioMute
 # Screen 
 super + shift + s
 		~/.scripts/screens/Screen-Profiles
-
 super + control + s
 		~/.scripts/screens/SelectMonitor
-
+super + shift + w
+		sh ~/.scripts/wallpaper
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
