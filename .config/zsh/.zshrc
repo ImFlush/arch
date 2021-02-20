@@ -101,18 +101,8 @@ export LANG=de_DE.UTF-8
 
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -vt1
 
-#alias f='fernseher'
-#alias ls='lsd'
-#alias lsl="ls -l"
-#alias vim="nvim"
-#alias v="nvim"
-#alias c="git --git-dir=$HOME/repos/arch/ --work-tree=$HOME"
-#alias sudo="sudo "
-
 # Alias
 [ -f ~/.config/rice/alias ] && source ~/.config/rice/alias
-
-export EDITOR=nvim
 
 # Setup fzf
 # ---------
