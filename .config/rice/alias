@@ -3,8 +3,11 @@ alias h='cd ~'
 
 # ls
 alias l='lsd'
-alias ls='lsd'
+alias ls='lsd -1'
+
 alias la="lsd -a"
+alias lsa="lsd -a1"
+
 alias ll="lsd -l"
 alias lal="lsd -al"
 
@@ -13,8 +16,8 @@ alias v="nvim"
 alias vim="nvim"
 
 # sudo
-alias sudo="sudo "
 alias s="sudo "
+alias sudo="sudo "
 
 # arch repos
 alias co="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
@@ -32,26 +35,37 @@ alias wgdown="sudo wg-quick down /etc/wireguard/"
 
 # Git
 alias g="git"
+
+alias gcl="git clone"
+
 alias gs="git status"
+
 alias ga="git add"
 alias gaa="git add --all"
+
 alias gc="git commit"
-alias gcl="git clone"
 alias gcm="git commit -m"
+
 alias gd="git diff"
+
 alias gl="git log"
 alias glo="git log --oneline"
+
 alias gm="git merge"
+
 alias gch="git checkout"
 alias gchm="git checkout master"
+
 alias gr="git reset"
 alias grh="git reset --hard"
+
 alias gpp="git pull && git push"
 alias gpl="git pull"
 alias gps="git push"
 
-# dwm
+# dwm & st
 alias cdwm="cd ~/repos/dwm"
 alias cdst="cd ~/repos/st"
+
 alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
 alias st-clean='cd ~/repos/st && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
