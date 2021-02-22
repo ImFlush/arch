@@ -6,5 +6,5 @@ then
 		mv .background .background1
 		mv .background_ .background
 		mv .background1 .background_
-		xwallpaper --daemon --zoom ~/bilder/.background
+		xwallpaper --zoom ~/bilder/.background
 fi
