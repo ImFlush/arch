@@ -41,10 +41,10 @@ super + F8
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 Volume "$(~/.scripts/volume)"
+		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 Volume "$($HOME/.scripts/volume)"
 		
 XF86AudioMute
-		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$(~/.scripts/volume)"
+		pactl set-sink-mute 0 toggle; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$($HOME/.scripts/volume)"
 		
 {XF86AudioPlay,XF86AudioNext,XF86AudioPrev}
 		playerctl {play-pause, next, previous}
@@ -60,4 +60,4 @@ super + shift + w
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks;  pkill -SIGTRAP dwmbar; dunstify -r 255 Brightness "   $(xbacklight -get) % "
+		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks; dunstify -r 255 Brightness "   $(xbacklight -get) % "
