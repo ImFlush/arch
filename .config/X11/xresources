@@ -1,6 +1,10 @@
 *.font: SFMono-Regular:pixelsize=20:antialias=true:autohint=true;
 
-*.alpha: 0.6
+*.alpha: 0.3
+
+! mouse
+Xcursor.theme: Simple-and-Soft
+Xcursor.size: 32
 
 ! special
 *.foreground: #f5f5dc
