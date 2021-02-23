@@ -9,17 +9,7 @@ export TERM="st-256color"
 #export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # xdg base directory
-export XDG_DESKTOP_DIR="$HOME"
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-export XDG_DOCUMENTS_DIR="$HOME/dokumente"
-export XDG_DOWNLOAD_DIR="$HOME/downloads"
-export XDG_PICTURES_DIR="$HOME/bilder"
-export XDG_VIDEOS_DIR="$HOME/videos"
-export XDG_MUSIC_DIR="$HOME/musik"
+sh $HOME/.config/rice/user-dirs
 
 # ZSH
 export ZSH="$XDG_CONFIG_HOME/zsh/ohmyzsh"
