@@ -2,7 +2,7 @@
 
 trap 'update_trap' 5
 
-delim="|"
+delim="⏐"
 
 # update the bar
 setroot()
@@ -29,7 +29,7 @@ update_trap()
 
 status()
 {
-	echo -n "$wireguard "
+	echo -n "$wireguard $delim "
 	echo -n "$network "
 
 	echo -n $delim
@@ -51,7 +51,7 @@ status()
 # update scripts
 wireguard()
 {
-	wireguard="$(sh ~/.scripts/wireguard $delim)"
+	wireguard="$(sh ~/.scripts/wireguard)"
 }
 network()
 {
