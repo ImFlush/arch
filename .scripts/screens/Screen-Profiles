@@ -9,17 +9,17 @@ vga=DP-1
 if [ "$mode" = "" ]; then
 		exit 1
 elif [ "$mode" = "Laptop" ]; then
-		xrandr --output "$intern" --mode 1920x1080
+		xrandr --output "$intern" --mode 1920x1080R
 		xrandr --output "$hdmi" --off
 		xrandr --output "$vga" --off
 		xset s on
 elif [ "$mode" = "Fernseher" ]; then
 		xrandr --output "$intern" --off 
-		xrandr --output "$hdmi" --mode 1360x768
+		xrandr --output "$hdmi" --mode 1360x768R
 		xrandr --output "$vga" --off
 		xset s off
 elif [ "$mode" = "Tisch" ]; then
-		xrandr --output "$intern" --mode 1920x1080
+		xrandr --output "$intern" --mode 1920x1080R
 		xrandr --output "$hdmi" --off
 		xrandr --output "$vga" --left-of "$intern" --auto
 		xset s off
@@ -30,5 +30,4 @@ elif [ "$mode" = "Papa" ]; then
 		xset s off
 fi
 
-sleep .5
 xwallpaper --zoom ~/bilder/.background

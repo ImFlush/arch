@@ -64,5 +64,4 @@ else
 fi
 $befehl
 
-sleep .5
 xwallpaper --zoom ~/bilder/.background
