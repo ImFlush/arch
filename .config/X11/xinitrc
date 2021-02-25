@@ -9,7 +9,7 @@ numlockx on
 xwallpaper --zoom ~/bilder/.background
 pactl set-sink-volume 0 50%
 xbacklight -set 100
-xrdb /home/tom/.config/X11/xresources
+xrdb $XDG_CONFIG_HOME/X11/xresources
 
 # Programs
 sxhkd &
@@ -17,8 +17,14 @@ xbanish -s -t 4000 -b &
 dunst &
 
 # Display
-xrandr --output eDP-1 --mode 1920x1080
+xrandr --newmode "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync
+xrandr --addmode eDP-1 1920x1080R
+xrandr --newmode "1360x768R"   72.00  1360 1408 1440 1520  768 771 781 790 +hsync -vsync
+xrandr --addmode HDMI-1 1360x768R
+
+xrandr --output eDP-1 --mode 1920x1080R
 xrandr --output HDMI-1 --set audio force-dvi
+
 
 # Compositor
 xcompmgr &
