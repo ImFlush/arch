@@ -41,7 +41,7 @@ super + F8
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 Volume "$($HOME/.scripts/volume)"
+		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$($HOME/.scripts/volume)"
 		
 XF86AudioMute
 		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$($HOME/.scripts/volume)"
