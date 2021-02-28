@@ -30,8 +30,8 @@ alias wific="nmcli connection"
 alias wgtup="sudo wg-quick up /etc/wireguard/tom.dedyn.io.conf"
 alias wgtdown="sudo wg-quick down /etc/wireguard/tom.dedyn.io.conf"
 
-alias wgup="sudo wg-quick up /etc/wireguard/"
-alias wgdown="sudo wg-quick down /etc/wireguard/"
+alias wgup="sudo wg-quick up"
+alias wgdown="sudo wg-quick down"
 
 # Git
 alias g="git"
