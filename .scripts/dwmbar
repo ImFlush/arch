@@ -13,16 +13,18 @@ setroot()
 
 update_all()
 {
-	wireguard
-	network
-	volume
-	battery
+	wireguard_update
+	network_update
+	diskspace_update
+	volume_update
+	battery_update
+	date_update
 
 	setroot
 }
 update_trap()
 {
-	volume
+	volume_update
 
 	setroot
 }
@@ -30,40 +32,37 @@ update_trap()
 status()
 {
 	echo -n "$wireguard $delim "
-	echo -n "$network "
-
-	echo -n $delim
-	echo -n "  $(df -h / | grep -E '/dev/sda2' | awk '{print $4}') "
-
-	#echo -n $delim
-	#echo -n " $delim  $(xbacklight -get) % "
-
-	echo -n $delim
-	echo -n " $volume "
-
-	echo -n $delim
-	echo -n " $battery "
-
-	echo -n $delim
-	echo -n "  $(date '+%a %d. %b  %H:%M') "
+	echo -n "$network $delim "
+	echo -n " $diskspace $delim "
+	echo -n "$volume $delim "
+	echo -n "$battery $delim "
+	echo -n " $date "
 }
 
 # update scripts
-wireguard()
+wireguard_update()
 {
 	wireguard="$(sh ~/.scripts/wireguard)"
 }
-network()
+network_update()
 {
 	network="$(sh ~/.scripts/network)"
 }
-volume()
+diskspace_update()
+{
+	diskspace="$(df -h / | grep -E '/dev/sda2' | awk '{print $4}')"
+}
+volume_update()
 {
 	volume="$(sh ~/.scripts/volume | head -1)"
 }
-battery()
+battery_update()
 {
 	battery="$(sh ~/.scripts/battery)"
+}
+date_update()
+{
+	date="$(date '+%a %d. %b  %H:%M')"
 }
 
 while true; do
