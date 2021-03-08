@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scrot $XDG_PICTURES_DIR/screenshots/scrot_"$(date +'%Y-%m-%d_%H-%M-%S')".jpg
