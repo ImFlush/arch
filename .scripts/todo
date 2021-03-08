@@ -6,7 +6,7 @@
 # add it.
 #
 
-file="$HOME/.todo"
+file="$XDG_CONFIG_HOME/todo/todo"
 touch "$file"
 height=$(wc -l "$file" | awk '{print $1}')
 prompt="Add/delete a task: "
