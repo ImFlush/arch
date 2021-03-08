@@ -9,14 +9,17 @@ super + shift + t
 		todo
 
 super + F2
-		sh ~/.scripts/signal
+		sh signal
 super + F3
-		sh ~/.scripts/telegram
+		sh telegram
 super + F4
-		sh ~/.scripts/discord
+		sh discord
 super + F5
 		st htop
 
+# Screenshot
+super + shift + Print
+		sh screenshot; dunstify -r 265 screenshot "screenshot taken"
 
 # Shutdown
 super + F12
@@ -52,11 +55,11 @@ XF86AudioMute
 
 # Screen 
 super + shift + s
-		~/.scripts/screens/Screen-Profiles
+		sh $HOME/.scripts/screens/Screen-Profiles
 super + control + s
-		~/.scripts/screens/SelectMonitor
+		sh $HOME/.scripts/screens/SelectMonitor
 super + shift + w
-		sh ~/.scripts/wallpaper
+		sh wallpaper
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
