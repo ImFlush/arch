@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ~/repos/dwm
+cd $HOME/repos/dwm
 git checkout master
 
 for branch in $(git for-each-ref --format='%(refname)' refs/heads/ | cut -d'/' -f3); do
@@ -9,6 +9,7 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/ | cut -d'/' -
 		if [ "$branch" = "$nolayout" ]; then
 			echo $branch
 			git merge $branch -m $branch
+			[ $? != 0 ] && exit
 		fi
 	fi
 done
