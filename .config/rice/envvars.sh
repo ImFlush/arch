@@ -14,6 +14,7 @@ source $HOME/.config/rice/user-dirs
 # ZSH
 export ZSH="$XDG_CONFIG_HOME/zsh/ohmyzsh"
 
+export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 export LESSKEY="$XDG_CONFIG_HOME/less/lesskey"
 export LESSHISTFILE="-"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
