@@ -8,7 +8,7 @@ alias ls='lsd -1'
 alias la="lsd -a"
 alias lsa="lsd -a1"
 
-alias ll="lsd -l"
+alias lsl="lsd -l"
 alias lal="lsd -al"
 
 # vim
