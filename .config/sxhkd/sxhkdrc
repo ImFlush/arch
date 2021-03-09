@@ -13,7 +13,7 @@ super + F2
 super + F3
 		sh telegram
 super + F4
-		sh discord
+		sh $HOME/.scripts/discord
 super + F5
 		st htop
 
