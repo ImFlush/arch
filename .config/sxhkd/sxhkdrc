@@ -1,6 +1,8 @@
 # Programs
 super + Return 
 		$TERMINAL
+super + KP_Enter 
+		$TERMINAL
 super + c
 		$BROWSER
 super + shift + x
