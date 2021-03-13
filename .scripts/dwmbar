@@ -31,7 +31,7 @@ update_trap()
 
 status()
 {
-	echo -n "$wireguard $delim "
+	[ "$wireguard" ] && echo -n "$wireguard $delim "
 	echo -n "$network $delim "
 	echo -n " $diskspace $delim "
 	echo -n "$volume $delim "
