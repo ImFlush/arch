@@ -104,6 +104,9 @@ export LANG=de_DE.UTF-8
 # Alias
 [ -f ~/.config/rice/alias ] && source ~/.config/rice/alias
 
+# syntax highlighting
+[ -f ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/tom/repos/fzf/bin* ]]; then
