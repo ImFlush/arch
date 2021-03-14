@@ -8,8 +8,7 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/ | cut -d'/' -
 	if [ "$branch" != "master" ];then
 		if [ "$branch" = "$nolayout" ]; then
 			echo $branch
-			git merge $branch -m $branch
-			[ $? != 0 ] && exit
+			git merge $branch -m $branch || exit
 		fi
 	fi
 done
