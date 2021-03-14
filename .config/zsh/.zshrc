@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 #export ZSH="/home/tom/.config/zsh/ohmyzsh"
 
@@ -17,30 +14,9 @@ ZSH_THEME="tom"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -99,6 +75,23 @@ export LANG=de_DE.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# ZSH Settings
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+setopt share_history
+setopt inc_append_history
+
+# Prompt
+#autoload -U colors && colors
+#source ~/repos/zsh-git-prompt/zshrc.sh
+#PROMPT='%n%f@%F{blue}%B%m%f %~%b%f $(git_super_status) %# '
+
+## Auto Completion
+#autoload -Uz compinit compinit
+#zstyle ':completion:*' menu select
+#setopt COMPLETE_ALIASES
+
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -vt1
 
 # Alias
@@ -120,8 +113,5 @@ fi
 # Key bindings
 # ------------
 source "/home/tom/repos/fzf/shell/key-bindings.zsh"
-
-setopt share_history
-setopt inc_append_history
 
 source ~/.scripts/fuzzy
