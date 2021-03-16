@@ -2,6 +2,15 @@
 
 *.alpha: 0.3
 
+
+! dwm
+dwm.borderpx: 3
+dwm.gappx: 10
+dwm.snap: 32
+dwm.swallowfloating: 0
+dwm.showbar: 1
+dwm.topbar: 1
+
 ! mouse
 Xcursor.theme: Simple-and-Soft
 Xcursor.size: 32
