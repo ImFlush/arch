@@ -1,50 +1,40 @@
-#!/bin/bash
+#!/bin/sh
 
-VOL=$(amixer get Master | grep -E -o '[0-9]{0,3}%' | grep -E -o '[0-9]{0,3}' | sort -u)
-mute=$(amixer get Master | grep -E -o '(\[on\]|\[off\])' | sort -u)
+maxvol=150
 
-if [ $mute = "[off]" ]
-then
-		status="󰝟"
-elif [ "$VOL" -lt 31 ]
-then
-		status="󰕿"
-elif [ "$VOL" -lt 66 ]
-then
-		status="󰖀"
-else
-		status="󰕾"
-fi
+max_volume()
+{
+		VOL=$(amixer get Master | grep -E -o '[0-9]{0,3}%' | grep -E -o '[0-9]{0,3}' | sort -u)
+		[ $VOL -gt $maxvol ] && pactl set-sink-volume 0 "$maxvol"% && max_volume
+}
+volume()
+{
+		[ "$VOL" -le 65 ] && status="󰖀" || status="󰕾"
+		[ "$VOL" -le 20 ] && status="󰕿"
+		[ $mute ] && status="󰝟"
+		echo "$status $VOL %"
+}
+# bar for notification
+notify()
+{
+		for (( i=0; i<100; i+=10 ))
+		do
+				if [ $(( $i + 5 )) -eq $VOL ]
+				then
+						[ $mute ] && bar+="󰰱" || bar+="󱎖"
+				elif [ $i -lt $VOL ]
+				then
+						[ $mute ] && bar+="󰰱" || bar+="󰄯"
+				elif [ $i -ge $VOL ]
+				then
+						[ $mute ] && bar+=$"󰰲" || bar+=$"󰄰"
+				fi
+		done
+		echo "$bar"
+}
 
-echo "$status $VOL %"
+max_volume
+mute=$(amixer get Master | grep -E -o '(\[off\])' | sort -u)
 
-
-# bar for dunst
-# filled circle
-for (( i=0; i<$VOL; i=$i+10 ))
-do
-	if [ $mute = "[off]" ]
-	then
-		bar+=$"󰰱"
-	else
-		if [ $(( $i + 5 )) == $VOL ]
-		then
-			bar+=$"󱎖"
-		else
-			bar+=$"󰄯"
-		fi
-	fi
-done
-
-# empty circle
-for (( i=$VOL; i<=90; i=$i+10 ))
-do
-	if [ $mute = "[off]" ]
-	then
-		bar+=$"󰰲"
-	else
-		bar+=$"󰄰"
-	fi
-done
-
-echo "$bar"
+volume
+notify
