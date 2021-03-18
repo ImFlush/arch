@@ -7,16 +7,6 @@ ETH=$(nmcli -g DEVICE,NAME connection | grep -E '^eno1:')
 
 flightmode=$(rfkill -o TYPE,SOFT list | grep -E 'wlan' | awk '{print $2}')
 
-if [ "$ETH" != '' ]
-	then
-		echo " LAN"
-elif [ "$WIFI" != '' ]
-	then
-		status=""
-		echo $status $WIFI $strength 
-elif [ "$flightmode" = 'gesperrt' ]
-	then
-		echo ""
-else
-		echo ""
-fi
+[ "$flightmode" = 'gesperrt' ] && echo "" && exit
+[ "$ETH" != '' ] && echo " LAN" && exit
+[ "$WIFI" != '' ] && echo " $WIFI $strength" && exit || echo "" && exit
