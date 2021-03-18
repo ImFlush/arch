@@ -1,7 +1,5 @@
+#!/bin/bash
+
 interface=$(nmcli -g TYPE,DEVICE connection | grep -E 'wireguard')
 
-if [ "$interface" != '' ]
-	then
-		wireguard=$(nmcli -g TYPE,DEVICE connection | grep -E 'wireguard' | cut -b 11-)
-		echo -n " $wireguard"
-fi
+[ "$interface" != '' ] && wireguard=$(nmcli -g TYPE,DEVICE connection | grep -E 'wireguard' | cut -b 11-) && echo -n " $wireguard"
