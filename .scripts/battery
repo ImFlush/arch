@@ -3,28 +3,12 @@
 BAT=$(acpi | tail -1 | awk 'NR==1 gsub (/[%,]/,"") ;NR==1 {print $4}')
 CHR=$(acpi | tail -1 | awk '{print $3}')
 
-if [ "$CHR" != "Discharging," ]
-	then
-		status=$""
-elif [ "$CHR" = '' ]
-	then
-		echo "?"
-		exit
-elif [ $BAT -lt 11 ]
-	then
-		status=$""
-elif [ $BAT -lt 26 ]
-    then
-		status=$""
-elif [ $BAT -lt 51 ]
-    then
-		status=$""
-elif [ $BAT -lt 76 ]
-    then
-		status=$""
+[ "$CHR" = '' ] && echo "?" && exit
 
-else
-		status=$""
-fi
+[ $BAT -le 75 ] && status=$"" || status=$""
+[ $BAT -le 50 ] && status=$""
+[ $BAT -le 25 ] && status=$""
+[ $BAT -le 10 ] && status=$""
+[ "$CHR" != "Discharging," ] && status=$""
 
 echo "$status $BAT %"
