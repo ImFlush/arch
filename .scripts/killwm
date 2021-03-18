@@ -1,8 +1,3 @@
 #!/bin/sh
 
-if [ "$(wmctrl -m | grep Name | cut -d' ' -f2)" = "dwm" ]
-	then
-		pkill launch-dwm
-else
-		i3-msg exit
-fi
+[ "$(wmctrl -m | grep Name | awk '{ print $2 }')" = "dwm" ] && pkill launch-dwm || i3-msg exit
