@@ -95,7 +95,11 @@ setopt inc_append_history
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -vt1
 
 # Alias
-[ -f ~/.config/rice/alias ] && source ~/.config/rice/alias
+[ -f $HOME/.scripts/.generate-alias ] && $HOME/.scripts/.generate-alias "posix" | source /dev/stdin
+alias udo="/usr/bin/sudo"
+
+# Envvars
+[ -f $HOME/.scripts/.generate-envvars ] && $HOME/.scripts/.generate-envvars "posix" | source /dev/stdin
 
 # syntax highlighting
 [ -f ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
