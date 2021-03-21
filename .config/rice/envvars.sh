@@ -1,40 +1,50 @@
 #!/bin/sh
 
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="brave"
+EDITOR nvim
+TERMINAL st
+BROWSER brave
 
-export PATH=$PATH:$HOME/.scripts
-export TERM="st-256color"
-#export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+PATH $PATH:$HOME/.scripts
+TERM st-256color
+#LS_COLORS  $LS_COLORS:ow=1;34:tw=1;34:
 
 # xdg base directory
-source $HOME/.config/rice/user-dirs
+XDG_DESKTOP_DIR $HOME
+
+XDG_CONFIG_HOME $HOME/.config
+XDG_CACHE_HOME $HOME/.cache
+XDG_DATA_HOME $HOME/.local/share
+
+XDG_DOCUMENTS_DIR $HOME/dokumente
+XDG_DOWNLOAD_DIR $HOME/downloads
+XDG_PICTURES_DIR $HOME/bilder
+XDG_VIDEOS_DIR $HOME/videos
+XDG_MUSIC_DIR $HOME/musik
+
+VSCODE_PORTABLE $XDG_DATA_HOME/vscode
+LESSKEY $XDG_CONFIG_HOME/less/lesskey
+LESSHISTFILE -
+WGETRC $XDG_CONFIG_HOME/wget/wgetrc
+WINEPREFIX $XDG_DATA_HOME/wineprefixes/default
+ZDOTDIR $XDG_CONFIG_HOME/zsh
+HISTFILE $XDG_DATA_HOME/zsh/history
+XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
+XINITRC $XDG_CONFIG_HOME/X11/xinitrc
+DOCKER_CONFIG $XDG_CONFIG_HOME/docker
+PSQLRC $XDG_CONFIG_HOME/pg/psqlrc
+PSQL_HISTORY $XDG_CACHE_HOME/pg/psql_history
+PGPASSFILE $XDG_CONFIG_HOME/pg/pgpass
+PGSERVICEFILE $XDG_CONFIG_HOME/pg/pg_service.conf
 
 # ZSH
-export ZSH="$XDG_CONFIG_HOME/zsh/ohmyzsh"
+ZSH $XDG_CONFIG_HOME/zsh/ohmyzsh
 
-export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
-export LESSKEY="$XDG_CONFIG_HOME/less/lesskey"
-export LESSHISTFILE="-"
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+HISTFILESIZE 1000000
+HISTSIZE 1000000
+SAVEHIST $HISTSIZE
+HIST_IGNORE_DUPS
 
-export HISTFILESIZE=1000000
-export HISTSIZE=1000000
-export SAVEHIST=$HISTSIZE
-export HIST_IGNORE_DUPS
-
-#export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-#export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-#export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
-#export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
-#export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
-#export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
-#export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
-#export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-#export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
+#GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+#NUGET_PACKAGES $XDG_CACHE_HOME/NuGetPackages
+#PASSWORD_STORE_DIR $XDG_DATA_HOME/pass
+#VSCODE_PORTABLE $XDG_DATA_HOME/vscode

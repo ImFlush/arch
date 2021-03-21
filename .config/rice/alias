@@ -1,71 +1,77 @@
 # home
-alias h='cd ~'
+h cd ~
+
+# exit
+:q exit
 
 # ls
-alias l='lsd'
-alias ls='lsd -1'
+l lsd
+ls lsd -1
 
-alias la="lsd -a"
-alias lsa="lsd -a1"
+la lsd -a
+lsa lsd -a1
 
-alias lsl="lsd -l"
-alias lal="lsd -al"
+lsl lsd -l
+lal lsd -al
 
 # vim
-alias v="nvim"
-alias vim="nvim"
+v nvim
+vim nvim
 
 # sudo
-alias s="sudo "
-alias sudo="sudo "
+udo udo
+s udo
+sudo udo
 
 # arch repos
-alias co="git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom"
+co git --git-dir=/home/tom/repos/arch/ --work-tree=/home/tom
 
 # nmcli
-alias wifi="nmcli device wifi"
-alias wific="nmcli connection"
+wifi nmcli device wifi
+wific nmcli connection
 
 # wireguard
-alias wgtup="sudo wg-quick up /etc/wireguard/tom.dedyn.io.conf"
-alias wgtdown="sudo wg-quick down /etc/wireguard/tom.dedyn.io.conf"
+wgtup sudo wg-quick up /etc/wireguard/tom.dedyn.io.conf
+wgtdown sudo wg-quick down /etc/wireguard/tom.dedyn.io.conf
 
-alias wgup="sudo wg-quick up"
-alias wgdown="sudo wg-quick down"
+wgup sudo wg-quick up
+wgdown sudo wg-quick down
 
 # Git
-alias g="git"
+g git
 
-alias gcl="git clone"
+gcl git clone
 
-alias gs="git status"
+gs git status
 
-alias ga="git add"
-alias gaa="git add --all"
+ga git add
+gaa git add --all
 
-alias gc="git commit"
-alias gcm="git commit -m"
+gb git branch
 
-alias gd="git diff"
+gc git commit
+gcm git commit -m
 
-alias gl="git log"
-alias glo="git log --oneline"
+gd git diff
 
-alias gm="git merge"
+gl git log
+glo git log --oneline
 
-alias gch="git checkout"
-alias gchm="git checkout master"
+gm git merge
 
-alias gr="git reset"
-alias grh="git reset --hard"
+gch git checkout
+gchm git checkout master
 
-alias gpp="git pull && git push"
-alias gpl="git pull"
-alias gps="git push"
+gr git reset
+grh git reset --hard
+
+gpp git pull && git push
+gpl git pull
+gps git push
 
 # dwm & st
-alias cdwm="cd ~/repos/dwm"
-alias cdst="cd ~/repos/st"
+cdwm cd ~/repos/dwm
+cdst cd ~/repos/st
 
-alias dwm-clean='cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
-alias st-clean='cd ~/repos/st && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master'
+dwm-clean cd ~/repos/dwm && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master
+st-clean cd ~/repos/st && make clean && rm -f config.h && rm -f tags && git reset --hard origin/master
