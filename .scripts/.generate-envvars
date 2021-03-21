@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ "$1" = "posix" ] && cmd="export \1=\2"
+[ "$1" = "fish" ] && cmd="set -x \1 \2"
+
+sed "s/\s*#.*//g; /^\s*$/ d; s/\([^ ]*\)\s*\(.*\)/$cmd/p" .config/rice/envvars.sh
