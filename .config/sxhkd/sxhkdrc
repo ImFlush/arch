@@ -32,7 +32,7 @@ super + F11
 # Suspend
 super + F10
 		promt "Suspend?" "sh .scripts/suspend" &
-# Exit i3
+# Exit WM
 super + F9
 		promt "Exit WM?" "killwm" &
 
@@ -46,10 +46,10 @@ super + F8
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$($HOME/.scripts/volume)"
+		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
 		
 XF86AudioMute
-		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 volume "$($HOME/.scripts/volume)"
+		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
 		
 {XF86AudioPlay,XF86AudioNext,XF86AudioPrev}
 		playerctl {play-pause, next, previous}
