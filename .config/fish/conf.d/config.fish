@@ -1,6 +1,7 @@
 # sources
 [ -f $HOME/.scripts/.generate-alias ] && $HOME/.scripts/.generate-alias "fish" | source
 [ -f $HOME/.scripts/.generate-envvars ] && $HOME/.scripts/.generate-envvars "fish" | source
+[ -f $HOME/.scripts/fuzzy ] && source $HOME/.scripts/fuzzy
 source $XDG_CONFIG_HOME/fish/functions/*.fish
 
 # settings
@@ -41,7 +42,7 @@ function fish_prompt
 
 		# [DATE] usr@host git 󰞷
 		printf '[%s%s%s] %s%s%s@%s %s%s%s%s 󰞷  ' \
-		(set_color green) (date -u +"%H:%M") (set_color normal) \
+		(set_color green) (date +"%H:%M") (set_color normal) \
 		(set_color green) $USER (set_color normal) \
 		$hostname \
 		(set_color yellow) (prompt_pwd) (set_color normal) \
