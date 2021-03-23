@@ -1,7 +1,7 @@
 # sources
 [ -f $HOME/.scripts/.generate-alias ] && $HOME/.scripts/.generate-alias "fish" | source
 [ -f $HOME/.scripts/.generate-envvars ] && $HOME/.scripts/.generate-envvars "fish" | source
-[ -f $HOME/.scripts/fuzzy ] && source $HOME/.scripts/fuzzy
+[ -f $HOME/.scripts/fuzzy.fish ] && source $HOME/.scripts/fuzzy.fish
 source $XDG_CONFIG_HOME/fish/functions/*.fish
 
 # settings
