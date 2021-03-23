@@ -46,10 +46,10 @@ super + F8
 
 # Sound
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-		pactl set-sink-volume 0 {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
+		set sink (pacmd list-sinks  | grep -e 'index:' | grep "*" | cut -d' ' -f5); pactl set-sink-volume $sink {+5%, -5%}; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
 		
 XF86AudioMute
-		pactl set-sink-mute 0 toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
+		set sink (pacmd list-sinks  | grep -e 'index:' | grep "*" | cut -d' ' -f5); pactl set-sink-mute $sink toggle; pkill -SIGTRAP dwmbar; pkill -SIGRTMIN+10 i3blocks; dunstify -r 245 ( $HOME/.scripts/volume)
 		
 {XF86AudioPlay,XF86AudioNext,XF86AudioPrev}
 		playerctl {play-pause, next, previous}
