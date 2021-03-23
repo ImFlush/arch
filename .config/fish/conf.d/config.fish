@@ -14,6 +14,10 @@ function fish_prompt
 		__fish_prompt -u -h -p -b -g
 end
 
+function fish_command_not_found
+		echo "command "(set_color red)"'$argv[1]'"(set_color normal)" not found!"
+end
+
 # binds
 bind --mode insert ! __history_previous_command
 bind --mode insert ° __history_previous_argument
