@@ -3,4 +3,4 @@
 [ "$1" = "posix" ] && cmd="export \1=\2"
 [ "$1" = "fish" ] && cmd="set -x \1 \2"
 
-sed "s/\s*#.*//g; /^\s*$/ d; s/\([^ ]*\)\s*\(.*\)/$cmd/p" $XDG_CONFIG_HOME/rice/envvars.sh
+sed "s/\s*#.*//g; /^\s*$/ d; s/\([^ ]*\)\s*\(.*\)/$cmd/p" $HOME/.config/rice/envvars.sh
