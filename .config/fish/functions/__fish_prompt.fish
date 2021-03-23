@@ -31,13 +31,13 @@ function __select_prompt
 end
 
 function __date
-		printf '[%s%s%s] ' \
-		(set_color green) (date +"%H:%M") (set_color normal)
+		printf '[%s] ' \
+		(set_color green)(date +"%H:%M")(set_color normal)
 end
 
 function __user
-		printf '%s%s%s' \
-		(set_color green) $USER (set_color normal)
+		printf '%s' \
+		(set_color green)$USER(set_color normal)
 end
 
 function __host
@@ -46,8 +46,8 @@ function __host
 end
 
 function __path
-		printf ' %s%s%s' \
-		(set_color yellow) (prompt_pwd) (set_color normal)
+		printf ' %s' \
+		(set_color yellow)(prompt_pwd)(set_color normal)
 end
 
 function __bad_status
@@ -63,10 +63,10 @@ end
 ### basic prompt
 function __normal_prompt
 		# [DATE] usr@host ~ 󰞷
-		printf '%s%s%s@%s %s%s%s 󰞷  ' \
-		(set_color green) $USER (set_color normal) \
+		printf '%s@%s %s 󰞷  ' \
+		(set_color green)$USER(set_color normal) \
 		$hostname \
-		(set_color yellow) (prompt_pwd) (set_color normal)
+		(set_color yellow)(prompt_pwd)(set_color normal)
 end
 
 ### prompt settings
