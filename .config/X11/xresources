@@ -1,9 +1,7 @@
 *.font: SFMono-Regular:pixelsize=20:antialias=true:autohint=true;
+*.alpha: 0.4
 
-*.alpha: 0.3
-
-
-! dwm
+!!! dwm
 dwm.borderpx: 3
 dwm.gappx: 10
 dwm.snap: 32
@@ -11,10 +9,29 @@ dwm.swallowfloating: 0
 dwm.showbar: 1
 dwm.topbar: 1
 
-! mouse
+!dwm.fonts: SFMono-Regular:size=15
+dwm.dmenufont: SFMono-Regular:size=15
+
+!font bar
+dwm.col_font: #f5f5dc
+!active tag
+dwm.col_focused: #AFAE00
+!second monitor active tag
+dwm.col_invfocused: #424100
+!bar & inactive tags
+dwm.col_unfocused: #593000
+!inactive window border
+dwm.col_background: #050307
+
+dwm.dmenu_font: #f5f5dc
+dwm.dmenu_focused: #A5B600
+dwm.dmenu_background: #402300
+
+!!! mouse
 Xcursor.theme: Simple-and-Soft
 Xcursor.size: 32
 
+!!! colors
 ! special
 *.foreground: #f5f5dc
 *.background: #050307
