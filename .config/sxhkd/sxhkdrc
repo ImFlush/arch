@@ -65,4 +65,4 @@ super + shift + w
 
 # Brightness
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks; dunstify -r 255 Brightness "   $(xbacklight -get) % "
+		xbacklight {-inc 20, -dec 20}; pkill -SIGRTMIN+20 i3blocks; dunstify -r 255 Brightness "   "(xbacklight -get)" % "
