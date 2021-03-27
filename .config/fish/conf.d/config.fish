@@ -15,8 +15,21 @@ function fish_prompt
 		__fish_prompt -u -h -p -b -g
 end
 
-#function fish_mode_prompt
-#end
+function fish_mode_prompt
+		[ $fish_bind_mode = "default" ] && \
+				printf '%s[N]%s ' \
+				(set_color red) (set_color normal)
+		[ $fish_bind_mode = "visual" ] && \
+				printf '%s[V]%s ' \
+				(set_color green) (set_color normal)
+		[ $fish_bind_mode = "replace_one" ] && \
+				printf '%s[r]%s ' \
+				(set_color cyan) (set_color normal)
+		[ $fish_bind_mode = "replace" ] && \
+				printf '%s[R]%s ' \
+				(set_color cyan) (set_color normal)
+		commandline -f repaint
+end
 
 function fish_command_not_found
 		echo "command "(set_color red)"'$argv[1]'"(set_color normal)" not found!"
